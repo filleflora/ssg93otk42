@@ -1,6 +1,6 @@
 ### Description ### 
 
-> CA API Gateway v9.3 docker project with OTK 4.2 installed while lunching
+> Gateway v9.3 docker project with OTK 4.2 installed while lunching
 
 ### Usage ###
 
