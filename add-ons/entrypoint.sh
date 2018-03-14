@@ -208,6 +208,9 @@ runGatewayPreBootScripts() {
 startGateway() {
 	info "Starting gateway in background"
 	touch /opt/SecureSpan/Gateway/node/default/var/preboot
+	if test -f /opt/SecureSpan/Gateway/node/default/var/started; then 
+		rm -f /opt/SecureSpan/Gateway/node/default/var/started
+	fi
 	cd "${GATEWAY_DIR}/runtime"
 	eval java \
 		-Xms${SSG_JVM_HEAP} \
@@ -249,7 +252,7 @@ installOTK(){
 		echo "OTK installed successfully. Continuing."
 
 		echo "Shutting down the gateway to perform required restart post OTK installation..."
-		ssg_pid = $(grep java /proc/*/status | awk -F'/' '{print $3}')
+		ssg_pid=$(grep java /proc/*/status | awk -F'/' '{print $3}')
 		kill $ssg_pid		
 		
 		echo "Restarting the gateway..."

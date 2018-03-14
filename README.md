@@ -1,6 +1,9 @@
 ### Description ### 
 
-> Gateway v9.3 docker project with OTK 4.2 installed while lunching
+> CA API Gateway v9.3 docker project with OTK 4.2 installed while lunching
+
+### Pre- requisite ###
+> Please give your docker at least 6G RAM in order to run this project smoothly. Otherwise OTK installation might be incomplete due to insufficient memory.
 
 ### Usage ###
 
